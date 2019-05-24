@@ -5,11 +5,11 @@ import math
 def flower_csv_tomysql(csv_path, tablename):
     #config
     cfg = {
-        "host": "104.199.189.30",
+        "host": "[mysql_ip]",#要修改
         "port": 3306,
-        "database": "camp_1",
-        "user": "root",
-        "password": ""
+        "database": "camp_1",#要修改
+        "user": "[mysql_user]",#要修改
+        "password": "[mysql_password]"#要修改
     }
     conn = mysql.connector.connect(**cfg)
     df = pd.read_csv(csv_path, encoding="utf-8", dtype='str')
@@ -32,7 +32,7 @@ def flower_csv_tomysql(csv_path, tablename):
 
 
 # csv路徑
-csv_path = "./camp_url.csv"
+csv_path = "./camp_url.csv"#要修改
 # 要寫入的table名稱
-tablename = "fff"
+tablename = "fff"#要修改
 flower_csv_tomysql(csv_path,tablename)
